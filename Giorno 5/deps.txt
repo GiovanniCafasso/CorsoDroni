@@ -1,0 +1,28 @@
+# va inserito tutto sotto a
+#	source /opt/ros/melodic/setup.bash
+
+###################################################################
+##SIMULAZIONE ITC-ITS
+###################################################################
+
+source ~/catkin_ws/src/PX4-Autopilot/Tools/setup_gazebo.bash ~/catkin_ws/src/PX4-Autopilot ~/catkin_ws/src/PX4-Autopilot/build/px4_sitl_default
+
+source ~/catkin_ws/devel/setup.bash
+
+export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/gazebo-9/plugins:/opt/ros/melodic/lib:~/catkin_ws/src/PX4-Autopilot/build/px4_sitl_default/build_gazebo:$LD_LIBRARY_PATH
+
+export OGRE_RESOURCE_PATH=/usr/lib/x86_64-linux-gnu/OGRE-1.9.0:$OGRE_RESOURCE_PATH
+
+export ROS_PACKAGE_PATH=~/catkin_ws/src/PX4-Autopilot:~/catkin_ws/src/PX4-Autopilot/Tools/sitl_gazebo:~/catkin_ws/src/extars_ros:$ROS_PACKAGE_PATH
+
+export GAZEBO_MASTER_URI=http://localhost:11345
+
+export GAZEBO_RESOURCE_PATH=/usr/share/gazebo-9:$GAZEBO_RESOURCE_PATH
+
+export GAZEBO_PLUGIN_PATH=/usr/lib/x86_64-linux-gnu/gazebo-9/plugins:~/catkin_ws/src/PX4-Autopilot/Tools/sitl_gazebo/build:~/catkin_ws/src/PX4-Autopilot/build/px4_sitl_default/build_gazebo:GAZEBO_PLUGIN_PATH
+
+export GAZEBO_MODEL_PATH=/usr/share/gazebo-9/models:~/catkin_ws/src/PX4-Autopilot/Tools/sitl_gazebo/models:~/catkin_ws/src/PX4-Autopilot/Tools/sitl_gazebo/models:~/catkin_ws/src/PX4-Autopilot/Tools/sitl_gazebo/worlds:$GAZEBO_MODEL_PATH
+
+export GAZEBO_MODEL_DATABASE_URI=http://gazebosim.org/models:$GAZEBO_MODEL_DATABASE_URI
+
+export SITL_GAZEBO_PATH=~/catkin_ws/src/PX4-Autopilot/Tools/sitl_gazebo=$SITL_GAZEBO_PATH
